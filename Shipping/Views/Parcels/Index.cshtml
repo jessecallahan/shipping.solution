@@ -1,0 +1,21 @@
+@using Shipping.Models;
+
+<h1>Package Summary</h1>
+
+@if (Model.Count == 0)
+{
+  <p>There are no parcels in the list.</p>
+}
+<ul>
+  @foreach (Parcel parcel in Model)
+  {
+
+    <li>Total: $@parcel.Total, Volume: @parcel.VolumeProp, Height: @parcel.Height, Width: @parcel.Width, Length:
+      @parcel.Length</li>
+
+  }
+</ul>
+
+<h1>Welcome to JCLS Shipping!</h1>
+<a href='/parcels/new'>Add a new parcel</a>
+<a href='/parcels'>See list of parcels</a>
